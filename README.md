@@ -1,11 +1,7 @@
 # Golist Documentation
 Golist is a whitelist made just in **Go** that uses the library crypt to secure your keys
-## WARNING
-```md
-# ------------------------------------------------------------------------------------------------------------------- #
- This is not  secure if you are gonna use delete the folder "Data" and use a online server to handle the keys storage
-# ------------------------------------------------------------------------------------------------------------------- #
-```
+> [!WARNING]
+> This is not  secure if you are gonna use delete the folder "Data" and use a online server to handle the keys storage
 
 ## Tree
 ```YAML
