@@ -6,6 +6,8 @@ import (
 )
 
 func Init() int {
+	Handlers.Define_Salty("easel-usage-broom-draw-prescribe-hazy-arming-compost-exerciser-hexagon-unsubtly-excuse-uphold-revival-atrophy-identity-mutual-comfy-debating-grandkid")
+	// Define salty is optinal but recommended
 	config := Handlers.ReadJSONFile("Data/config.json")
 	basetype := config["type"].(string)
 

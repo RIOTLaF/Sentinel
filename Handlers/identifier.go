@@ -6,12 +6,27 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/denisbrodbeck/machineid"
 )
 
+var Salty string = "deflator-wackiness-widow-revisit-tricky-freckled-prepaid-tarnish-stopping-zesty-gauze-smog-uncapped-curliness-defiling-chance-pursuit-boots-recoil-cure"
+
+// Default salty
+
+func Define_Salty(NewSalty string) {
+	count := strings.Fields(NewSalty)
+	if len(count) < 8 {
+		fmt.Println("Not a secure hash using default")
+		return
+	}
+	Salty = NewSalty
+}
+
 func Simple_sha256(encode []byte) string {
-	hash := sha256.Sum256(encode)
+	localsalt := []byte(Salty)
+	hash := sha256.Sum256(append(localsalt, encode...))
 	return fmt.Sprintf("%x", hash)
 }
 
