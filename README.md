@@ -43,6 +43,6 @@ if VerifyKey("User_Key_Here") {
 ```
 ## Made using <3
 ![Go](https://img.shields.io/badge/golang-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) <a href="https://github.com/lukewhrit/phrase" target="_blank">
-    <img src="https://img.shields.io/badge/phrase-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Botão" width="105">
+    <img src="https://img.shields.io/badge/phrase-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Botão" width="100">
 </a>
 
