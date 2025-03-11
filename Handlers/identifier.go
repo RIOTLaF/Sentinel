@@ -16,8 +16,8 @@ var Salty string = "deflator-wackiness-widow-revisit-tricky-freckled-prepaid-tar
 // Default salty
 
 func Define_Salty(NewSalty string) {
-	count := strings.Fields(NewSalty)
-	if len(count) < 8 {
+	count := strings.Count(NewSalty, "-")
+	if count < 8 {
 		fmt.Println("Not a secure hash using default")
 		return
 	}
