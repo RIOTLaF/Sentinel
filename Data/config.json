@@ -1,4 +1,5 @@
 {
     "version": "2.0",
-    "type": "ip"
+    "type": "ip",
+    "debug": true
 }

@@ -5,8 +5,6 @@ import (
 	"whitelist/Handlers"
 )
 
-var debug bool = false // only enable for debug purpouses
-
 /*
 GENERATE A HASH WITH 30 WORDS EASILY
 
@@ -15,11 +13,13 @@ gen.Salt(30)
 */
 
 func Init() int {
-	Handlers.Define_Salty("easel-usage-broom-draw-prescribe-hazy-arming-compost-exerciser-hexagon-unsubtly-excuse-uphold-revival-atrophy-identity-mutual-comfy-debating-grandkid")
+	Salt := "easel-usage-broom-draw-prescribe-hazy-arming-compost-exerciser-hexagon-unsubtly-excuse-uphold-revival-atrophy-identity-mutual-comfy-debating-grandkid"
+	Handlers.Define_Salty(Salt)
 	// Define a new Salty if you want a secure hash you can use the hash generator
 	config := Handlers.ReadJSONFile("Data/config.json")
 	basetype := config["type"].(string)
 	version := config["version"]
+	debug := config["debug"].(bool)
 
 	fmt.Println("Running whitelist version:", version)
 	fmt.Println("Type: ", basetype+"\n")
@@ -28,6 +28,7 @@ func Init() int {
 		info := Handlers.Getinfo()
 		typing := info[basetype]
 		fmt.Println("HWID: ", typing)
+		fmt.Println("Salt: " + Salt)
 	}
 
 	return 0
@@ -38,6 +39,7 @@ func VerifyKey(key string) bool {
 	keys := Handlers.ReadJSONFile("Data/Keys.json")
 	config := Handlers.ReadJSONFile("Data/Config.json")
 	basetype := config["type"].(string)
+	debug := config["debug"].(bool)
 
 	typing := info[basetype]
 	hash := Handlers.Simple_sha256([]byte(key))
