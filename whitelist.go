@@ -5,9 +5,16 @@ import (
 	"whitelist/Handlers"
 )
 
+/*
+GENERATE A HASH WITH 30 WORDS EASILY
+
+import "whitelist/gen"
+gen.Salt(30)
+*/
+
 func Init() int {
 	Handlers.Define_Salty("easel-usage-broom-draw-prescribe-hazy-arming-compost-exerciser-hexagon-unsubtly-excuse-uphold-revival-atrophy-identity-mutual-comfy-debating-grandkid")
-	// Define salty is optinal but recommended
+	// Define a new Salty if you want a secure hash you can use the hash generator
 	config := Handlers.ReadJSONFile("Data/config.json")
 	basetype := config["type"].(string)
 
