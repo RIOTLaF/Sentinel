@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func repeat() /*bool*/ {
+func repeat() {
 	fmt.Println("Enter a key")
 	fmt.Println(`Type "Close" to finish the program`)
 
@@ -21,8 +21,6 @@ func repeat() /*bool*/ {
 	if strings.ToLower(key) != "close" {
 		repeat()
 	}
-
-	// return true
 }
 
 func main() {
