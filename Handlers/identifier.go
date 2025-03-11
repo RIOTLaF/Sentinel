@@ -7,8 +7,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-
-	"github.com/denisbrodbeck/machineid"
 )
 
 var Salty string = "deflator-wackiness-widow-revisit-tricky-freckled-prepaid-tarnish-stopping-zesty-gauze-smog-uncapped-curliness-defiling-chance-pursuit-boots-recoil-cure"
@@ -45,14 +43,7 @@ func getip() string {
 }
 
 func Getinfo() map[string]any {
-	hwid, err := machineid.ID()
-
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-
 	return map[string]any{
-		"ip":   getip(),
-		"hwid": Simple_sha256([]byte(hwid)),
+		"ip": getip(),
 	}
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/subtle"
 	"fmt"
 	"whitelist/Handlers"
 )
@@ -41,7 +42,7 @@ func VerifyKey(key string) bool {
 	basetype := config["type"].(string)
 	debug := config["debug"].(bool)
 
-	typing := info[basetype]
+	typing := info[basetype].(string)
 	hash := Handlers.Simple_sha256([]byte(key))
 
 	if debug {
@@ -49,5 +50,5 @@ func VerifyKey(key string) bool {
 		fmt.Println("Hash form: " + hash)
 	}
 
-	return keys[hash] == typing
+	return subtle.ConstantTimeCompare([]byte(keys[hash].(string)), []byte(typing)) == 1
 }
