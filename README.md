@@ -5,7 +5,7 @@ Golist is a whitelist made just in **Go** that uses the library crypt to secure 
 
 ## Tree
 ```rust
-├─── whitelist // root of the project
+whitelist // root of the project
 │   go.mod
 │   go.sum
 │   LICENSE
