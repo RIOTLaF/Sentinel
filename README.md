@@ -1,5 +1,5 @@
-# Golist Documentation
-Golist is a whitelist made just in **Go** that uses the library crypt to secure your keys
+# Sentinel Documentation
+Sentinel is a whitelist made just in **Go** that uses the library crypt to secure your keys
 > [!CAUTION]
 > Is recommended using a host to substitute the folder Data to avoid expose the hashs directly inside the file [Data/Keys.json](https://github.com/RIOTLaF/Sentinel/blob/master/Data/Keys.json)
 
